@@ -29,7 +29,6 @@ requirements:
     - matplotlib
     - seaborn
     - netcdf4
-    - tempdir
     - biopython
     - networkx
     - six
