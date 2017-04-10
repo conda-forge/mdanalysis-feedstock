@@ -34,6 +34,10 @@ requirements:
     - networkx
     - six
     - griddataformats
+    - joblib
+    - mmtf-python
+    - scikit-learn
+
 
 test:
   imports:
