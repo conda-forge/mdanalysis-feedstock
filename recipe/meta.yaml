@@ -20,15 +20,13 @@ requirements:
   build:
     - python
     - setuptools
-    - numpy 1.8.*  # [not py36]
-    - numpy 1.11.*  # [py36]
+    - numpy 1.10.4
     - cython
 
   run:
     - python
     - scipy
-    - numpy >=1.8  # [not py36]
-    - numpy >=1.11  # [py36]
+    - numpy >=1.10.4
     - matplotlib
     - seaborn
     - netcdf4
