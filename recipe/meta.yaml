@@ -14,12 +14,13 @@ source:
 build:
   number: 2
   skip: True  # [py3k or win]
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: MDA_USE_CYTHON=True pip install --no-deps .
 
 requirements:
   build:
     - python
     - setuptools
+    - pip
     - numpy 1.10.4
     - cython
 
