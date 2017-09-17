@@ -20,6 +20,7 @@ requirements:
   build:
     - python
     - setuptools
+    - pip
     - numpy 1.10.4
     - cython
 
