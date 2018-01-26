@@ -1,6 +1,6 @@
 {% set name = "MDAnalysis" %}
-{% set version = "0.16.2" %}
-{% set sha256 = "407d9a9ff1ab8a5e47973714d06fabff220f8d08a28792dee93e88e70e995b0a" %}
+{% set version = "0.17.0" %}
+{% set sha256 = "9bd61760334698cc7b8a57ad26456451e926e9c9e66722594ad8816561348cde" %}
 
 package:
   name: {{ name|lower }}
@@ -12,14 +12,13 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
-  skip: True  # [py3k or win]
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  number: 0
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
     - python
-    - setuptools
+    - pip
     - numpy 1.10.4
     - cython
 
@@ -33,8 +32,9 @@ requirements:
     - biopython
     - networkx
     - six
-    - griddataformats
+    - griddataformats >=0.4.0
     - joblib
+    - gsd
     - mmtf-python
     - scikit-learn
 
