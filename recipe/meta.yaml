@@ -13,22 +13,20 @@ source:
 
 build:
   number: 0
+  skip: True  # [win]
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
     - python
     - pip
-    - numpy 1.10.4  # [not win]
-    - numpy 1.11.*  # [win]
+    - numpy 1.10.4
     - cython
-    - msinttypes  # [win and py<35]
 
   run:
     - python
     - scipy
-    - numpy >=1.10.4  # [not win]
-    - numpy >=1.11.*  # [win]
+    - numpy >=1.10.4
     - matplotlib
     - seaborn
     - netcdf4
