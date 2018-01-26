@@ -19,13 +19,16 @@ requirements:
   build:
     - python
     - pip
-    - numpy 1.10.4
+    - numpy 1.10.4  # [not win]
+    - numpy 1.11.*  # [win]
     - cython
+    - msinttypes  # [win and py<35]
 
   run:
     - python
     - scipy
-    - numpy >=1.10.4
+    - numpy >=1.10.4  # [not win]
+    - numpy >=1.11.*  # [win]
     - matplotlib
     - seaborn
     - netcdf4
