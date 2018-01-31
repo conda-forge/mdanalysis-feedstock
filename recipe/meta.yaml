@@ -58,7 +58,7 @@ about:
     dynamics (MD) simulations. It can read and write most popular formats, and
     provides a flexible and fast framework for writing custom analysis through
     making the underlying data easily available as NumPy arrays.
-  doc_url: https://pythonhosted.org/MDAnalysis/
+  doc_url: https://www.mdanalysis.org/docs/
   dev_url: https://github.com/MDAnalysis/mdanalysis
 
 extra:
