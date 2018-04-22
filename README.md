@@ -18,14 +18,16 @@ making the underlying data easily available as NumPy arrays.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/mdanalysis-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/mdanalysis-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/mdanalysis-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/mdanalysis-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/mdanalysis-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/mdanalysis-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/mdanalysis-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/mdanalysis-feedstock)
+![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/mdanalysis/badges/version.svg)](https://anaconda.org/conda-forge/mdanalysis)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/mdanalysis/badges/downloads.svg)](https://anaconda.org/conda-forge/mdanalysis)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-mdanalysis-green.svg)](https://anaconda.org/conda-forge/mdanalysis) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/mdanalysis.svg)](https://anaconda.org/conda-forge/mdanalysis) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/mdanalysis.svg)](https://anaconda.org/conda-forge/mdanalysis) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/mdanalysis.svg)](https://anaconda.org/conda-forge/mdanalysis) |
 
 Installing mdanalysis
 =====================
