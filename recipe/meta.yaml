@@ -12,21 +12,23 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win]
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
+    - {{ compiler('c') }}
+  host:
     - python
     - pip
-    - numpy 1.10.4
+    - numpy
     - cython
 
   run:
     - python
     - scipy
-    - numpy >=1.10.4
+    - {{ pin_compatible('numpy') }}
     - matplotlib
     - seaborn
     - netcdf4
