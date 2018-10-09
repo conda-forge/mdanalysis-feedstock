@@ -1,6 +1,6 @@
 {% set name = "MDAnalysis" %}
-{% set version = "0.18.0" %}
-{% set sha256 = "a08acea1755112411e7db55e3f282e164b47a59e15794b38744cce6c596f252a" %}
+{% set version = "0.19.0" %}
+{% set sha256 = "248e3b37fc6150e31c609cc18a3927c32aee37b76d29cbfedf635e7e1aa982cf" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: True  # [win]
   script: python -m pip install --no-deps --ignore-installed .
 
