@@ -36,7 +36,7 @@ requirements:
     - six
     - griddataformats >=0.4.0
     - joblib
-    - gsd
+    - gsd # [not win]
     - mmtf-python
     - scikit-learn
 
