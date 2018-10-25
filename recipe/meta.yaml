@@ -12,6 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
+  skip: True  # [win and py2k]
   number: 1
   script: python -m pip install --no-deps --ignore-installed .
 
