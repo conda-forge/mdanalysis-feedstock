@@ -1,6 +1,6 @@
 {% set name = "MDAnalysis" %}
-{% set version = "0.19.0" %}
-{% set sha256 = "248e3b37fc6150e31c609cc18a3927c32aee37b76d29cbfedf635e7e1aa982cf" %}
+{% set version = "0.19.2" %}
+{% set sha256 = "c5395bbafa5efca2e1aee4715d26129844140c47cb8301da0293106cb969de7d" %}
 
 package:
   name: {{ name|lower }}
@@ -12,8 +12,8 @@ source:
   sha256: {{ sha256 }}
 
 build:
+  skip: True  # [win and py2k]
   number: 0
-  skip: True  # [win]
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
@@ -37,7 +37,7 @@ requirements:
     - six
     - griddataformats >=0.4.0
     - joblib
-    - gsd
+    - gsd  # [not win]
     - mmtf-python
     - scikit-learn
 
