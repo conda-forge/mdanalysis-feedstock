@@ -1,6 +1,6 @@
 {% set name = "MDAnalysis" %}
-{% set version = "0.19.2" %}
-{% set sha256 = "c5395bbafa5efca2e1aee4715d26129844140c47cb8301da0293106cb969de7d" %}
+{% set version = "0.20.0" %}
+{% set sha256 = "03938fc6c25bc16af7a2f5030118e6fb3d95b47a40ac70e887ba08048d87b33f" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   skip: True  # [win and py2k]
-  number: 1000
+  number: 0
   script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
