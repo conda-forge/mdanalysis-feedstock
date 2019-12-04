@@ -14,7 +14,7 @@ source:
 build:
   skip: True  # [win and py2k]
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
