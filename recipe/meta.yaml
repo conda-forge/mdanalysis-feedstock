@@ -41,6 +41,7 @@ requirements:
     - gsd  # [not win]
     - mmtf-python
     - scikit-learn
+    - tqdm
 
 
 test:
