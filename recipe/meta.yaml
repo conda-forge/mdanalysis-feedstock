@@ -42,6 +42,7 @@ requirements:
     - mmtf-python
     - scikit-learn
     - tqdm
+    - gsd
 
 
 test:
