@@ -33,16 +33,17 @@ requirements:
     - matplotlib-base
     - seaborn
     - netcdf4
-    - biopython
-    - networkx
-    - six
+    - biopython >=1.71,<1.77
+    - networkx >=1.0
+    - six >=1.4
     - griddataformats >=0.4.0
-    - joblib
+    - joblib >=0.12,<0.15
     - gsd  # [not win]
-    - mmtf-python
+    - mmtf-python >=1.0
     - scikit-learn
-    - tqdm
-    - gsd
+    - tqdm >=4.43
+    - mock
+    - funcsigs
 
 
 test:
