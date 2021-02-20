@@ -13,6 +13,7 @@ source:
 
 build:
   number: 0
+  skip: true  # [py39]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
