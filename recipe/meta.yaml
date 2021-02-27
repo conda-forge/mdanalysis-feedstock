@@ -14,6 +14,8 @@ source:
 build:
   number: 0
   skip: true  # [win]
+  skip: true  # [python_impl == 'pypy']
+  skip: true  # [python >= 3.9]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
