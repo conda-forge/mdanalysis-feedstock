@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
   skip: true  # [python_impl == 'pypy']
   skip: true  # [py>38]
@@ -30,16 +30,17 @@ requirements:
 
   run:
     - python
-    - scipy
+    - scipy >=1.0.0
     - numpy >1.13.3,<1.17
     - matplotlib-base
     - seaborn
-    - netcdf4
-    - biopython
+    - netcdf4 >=1.0
+    - biopython >=1.71,<1.77
     - networkx >=1.0
     - griddataformats >=0.4.0
-    - joblib >=0.12
-    - gsd  # [not win]
+    - joblib >=0.12,<0.15.0
+    - gsd >=1.9.3  # [win]
+    - gsd >=1.4.0  # [not win]
     - mmtf-python >=1.0
     - scikit-learn
     - tqdm >=4.43
