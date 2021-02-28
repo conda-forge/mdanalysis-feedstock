@@ -34,7 +34,7 @@ requirements:
     - numpy >1.13.3,<1.17
     - matplotlib-base
     - seaborn
-    - netcdf4
+    - netcdf4 >=1.0
     - biopython >=1.71,<1.77
     - networkx >=1.0
     - griddataformats >=0.4.0
