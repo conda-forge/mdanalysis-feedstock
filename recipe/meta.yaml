@@ -14,7 +14,7 @@ source:
 build:
   number: 0
   skip: true  # [python_impl == 'pypy']
-  skip: true  # [py>39]
+  skip: true  # [py>310]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -24,13 +24,14 @@ requirements:
   host:
     - python
     - pip
-    - numpy >=1.16.0
+    - numpy >=1.18.0
     - cython
+    - packaging
 
   run:
     - python
     - scipy >=1.0.0
-    - numpy >1.16.0
+    - numpy >1.18.0
     - matplotlib-base >=1.5.1
     - seaborn
     - netcdf4 >=1.0
@@ -44,6 +45,7 @@ requirements:
     - scikit-learn
     - tqdm >=4.43.0
     - threadpoolctl
+    - packaging
 
 test:
   imports:
