@@ -24,14 +24,14 @@ requirements:
   host:
     - python
     - pip
-    - numpy >=1.18.0
+    - numpy
     - cython
     - packaging
 
   run:
     - python
     - scipy >=1.0.0
-    - numpy >1.18.0
+    - numpy
     - matplotlib-base >=1.5.1
     - seaborn
     - netcdf4 >=1.0
