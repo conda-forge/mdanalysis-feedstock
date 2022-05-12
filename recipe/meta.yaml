@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 3
+  number: 4
   skip: true  # [python_impl == 'pypy']
   skip: true  # [py>310]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
@@ -31,7 +31,7 @@ requirements:
   run:
     - python
     - scipy >=1.0.0
-    - {{ pin_compatible('numpy') }}
+    - {{ pin_compatible('numpy', lower_bound='1.19') }}
     - matplotlib-base >=1.5.1
     - seaborn
     - netcdf4 >=1.0
