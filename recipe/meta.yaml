@@ -24,17 +24,17 @@ requirements:
   host:
     - python
     - pip
-    - numpy   1.18   # [py==37]
-    - numpy   1.18   # [py==38]
-    - numpy   1.19   # [py==39]
-    - numpy   1.21   # [py==310]
+    - numpy   1.18.0   # [py==37]
+    - numpy   1.18.0   # [py==38]
+    - numpy   1.19.3   # [py==39]
+    - numpy   1.21.4   # [py==310]
     - cython
     - packaging
 
   run:
     - python
     - scipy >=1.0.0
-    - {{ pin_compatible('numpy', lower_bound='1.18') }}
+    - {{ pin_compatible('numpy', lower_bound='1.18.0') }}
     - matplotlib-base >=1.5.1
     - seaborn
     - netcdf4 >=1.0
