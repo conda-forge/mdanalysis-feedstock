@@ -31,7 +31,7 @@ requirements:
   run:
     - python
     - scipy >=1.0.0
-    - numpy
+    - {{ pin_compatible('numpy', lower_bound='1.18') }}
     - matplotlib-base >=1.5.1
     - seaborn
     - netcdf4 >=1.0
