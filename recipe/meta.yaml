@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 3
   skip: true  # [python_impl == 'pypy']
   skip: true  # [py>310]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
@@ -24,14 +24,14 @@ requirements:
   host:
     - python
     - pip
-    - numpy >=1.18.0
+    - numpy
     - cython
     - packaging
 
   run:
     - python
     - scipy >=1.0.0
-    - numpy >1.18.0
+    - {{ pin_compatible('numpy') }}
     - matplotlib-base >=1.5.1
     - seaborn
     - netcdf4 >=1.0
