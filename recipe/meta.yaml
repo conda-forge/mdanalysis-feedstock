@@ -24,7 +24,7 @@ requirements:
   host:
     - python
     - pip <=22.0
-    - numpy
+    - numpy {{ numpy }}
     - cython
     - packaging
 
