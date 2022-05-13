@@ -8,22 +8,22 @@ jobs:
     vmImage: macOS-10.15
   strategy:
     matrix:
-      osx_64_python3.10.____cpythonpython_implcpython:
-        CONFIG: osx_64_python3.10.____cpythonpython_implcpython
+      osx_64_numpy1.18python3.7.____cpythonpython_implcpython:
+        CONFIG: osx_64_numpy1.18python3.7.____cpythonpython_implcpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: osx_64_python3.10.____cpythonpython_implcpython
-      osx_64_python3.7.____cpythonpython_implcpython:
-        CONFIG: osx_64_python3.7.____cpythonpython_implcpython
+        SHORT_CONFIG: osx_64_numpy1.18python3.7.____cpyth_hd77ea30731
+      osx_64_numpy1.19python3.8.____cpythonpython_implcpython:
+        CONFIG: osx_64_numpy1.19python3.8.____cpythonpython_implcpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: osx_64_python3.7.____cpythonpython_implcpython
-      osx_64_python3.8.____cpythonpython_implcpython:
-        CONFIG: osx_64_python3.8.____cpythonpython_implcpython
+        SHORT_CONFIG: osx_64_numpy1.19python3.8.____cpyth_hd5361ccee4
+      osx_64_numpy1.21python3.10.____cpythonpython_implcpython:
+        CONFIG: osx_64_numpy1.21python3.10.____cpythonpython_implcpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: osx_64_python3.8.____cpythonpython_implcpython
-      osx_64_python3.9.____cpythonpython_implcpython:
-        CONFIG: osx_64_python3.9.____cpythonpython_implcpython
+        SHORT_CONFIG: osx_64_numpy1.21python3.10.____cpyt_h16fdaa3d33
+      osx_64_numpy1.21python3.9.____cpythonpython_implcpython:
+        CONFIG: osx_64_numpy1.21python3.9.____cpythonpython_implcpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: osx_64_python3.9.____cpythonpython_implcpython
+        SHORT_CONFIG: osx_64_numpy1.21python3.9.____cpyth_hdc4bf1bf80
   timeoutInMinutes: 360
 
   steps:
