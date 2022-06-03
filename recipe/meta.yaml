@@ -15,7 +15,7 @@ build:
   number: 0
   skip: true  # [python_impl == 'pypy']
   skip: true  # [py>310]
-  skip: true  # [py<39]
+  skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
