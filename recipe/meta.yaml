@@ -22,14 +22,14 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
-    - python >= 3.8
+    - python
     - pip <22.1
     - numpy {{ numpy }}
     - cython
     - packaging
 
   run:
-    - python >= 3.8
+    - python
     - scipy >=1.5.0
     - {{ pin_compatible('numpy', lower_bound='1.19') }}
     - matplotlib-base >=1.5.1
@@ -43,7 +43,7 @@ requirements:
     - gsd >=1.4.0  # [not win]
     - mmtf-python >=1.0.0
     - scikit-learn
-    - tidynamics >= 1.0.0
+    - tidynamics >=1.0.0
     - tqdm >=4.43.0
     - threadpoolctl
     - fasteners
