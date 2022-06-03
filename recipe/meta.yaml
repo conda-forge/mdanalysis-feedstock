@@ -15,6 +15,7 @@ build:
   number: 0
   skip: true  # [python_impl == 'pypy']
   skip: true  # [py>310]
+  skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -23,7 +24,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - python
-    - pip <22.1
+    - pip
     - numpy {{ numpy }}
     - cython
     - packaging
@@ -39,8 +40,7 @@ requirements:
     - networkx >=2.0
     - griddataformats >=0.4.0
     - joblib >=0.12
-    - gsd >=1.9.3  # [win]
-    - gsd >=1.4.0  # [not win]
+    - gsd >=1.9.3
     - mmtf-python >=1.0.0
     - scikit-learn
     - tidynamics >=1.0.0
