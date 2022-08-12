@@ -8,4 +8,5 @@ github:
   tooling_branch_name: main
 provider:
   win: azure
+  linux_ppc64le: default
 test: native_and_emulated
