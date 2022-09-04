@@ -29,7 +29,7 @@ requirements:
   host:
     - python
     - pip
-    - numpy 1.21  # [(osx and arm64)]
+    - numpy 1.21  # [target_platform == 'osx-arm64']
     - numpy {{ numpy }}
     - cython
     - packaging
