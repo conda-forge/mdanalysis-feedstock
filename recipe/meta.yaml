@@ -29,8 +29,7 @@ requirements:
   host:
     - python
     - pip
-    - numpy 1.21.6           # [target_platform == 'osx-arm64']
-    - numpy {{ numpy }}      # [target_platform != 'osx-arm64']
+    - numpy {{ numpy }}
     - cython
     - packaging
 
