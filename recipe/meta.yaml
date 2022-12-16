@@ -14,7 +14,7 @@ source:
 build:
   number: 0
   skip: true  # [python_impl == 'pypy']
-  skip: true  # [py>310]
+  skip: true  # [py>311]
   skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
@@ -40,7 +40,7 @@ requirements:
     - matplotlib-base >=1.5.1
     - seaborn
     - netcdf4 >=1.0
-    - biopython >=1.71
+    - biopython >=1.80
     - networkx >=2.0
     - griddataformats >=0.4.0
     - joblib >=0.12
@@ -53,6 +53,7 @@ requirements:
     - fasteners
     - packaging
     - h5py >=2.10.0
+    - pytng>=0.2.3
 
 test:
   imports:
