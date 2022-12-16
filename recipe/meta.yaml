@@ -53,7 +53,7 @@ requirements:
     - fasteners
     - packaging
     - h5py >=2.10.0
-    - pytng>=0.2.3
+    - pytng >=0.2.3
 
 test:
   imports:
