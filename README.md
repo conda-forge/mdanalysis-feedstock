@@ -1,11 +1,11 @@
-About mdanalysis
-================
+About mdanalysis-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/mdanalysis-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.mdanalysis.org
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/mdanalysis-feedstock/blob/main/LICENSE.txt)
 
 Summary: A Python package for the handling and analysis of molecular simulations data.
 
