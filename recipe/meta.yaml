@@ -1,6 +1,6 @@
 {% set name = "MDAnalysis" %}
-{% set version = "2.4.3" %}
-{% set sha256 = "c4fbdc414e4fdda69052fff2a6e412180fe6fa90a42c24793beee04123648c92" %}
+{% set version = "2.5.0" %}
+{% set sha256 = "06ce4efab6ca1dbd2ee2959fc668049e1d574a8fe94ab948a4608244da1d016b" %}
 
 package:
   name: {{ name|lower }}
@@ -15,7 +15,7 @@ build:
   number: 0
   skip: true  # [python_impl == 'pypy']
   skip: true  # [py>311]
-  skip: true  # [py<38]
+  skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -36,7 +36,7 @@ requirements:
   run:
     - python
     - scipy >=1.5.0
-    - {{ pin_compatible('numpy', lower_bound='1.20') }}
+    - {{ pin_compatible('numpy', lower_bound='1.21') }}
     - matplotlib-base >=1.5.1
     - seaborn
     - netcdf4 >=1.0
