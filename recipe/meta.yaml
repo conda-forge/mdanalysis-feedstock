@@ -15,7 +15,7 @@ build:
   number: 0
   skip: true  # [python_impl == 'pypy']
   skip: true  # [py>311]
-  skip: true  # [py<38]
+  skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -36,7 +36,7 @@ requirements:
   run:
     - python
     - scipy >=1.5.0
-    - {{ pin_compatible('numpy', lower_bound='1.20') }}
+    - {{ pin_compatible('numpy', lower_bound='1.21') }}
     - matplotlib-base >=1.5.1
     - seaborn
     - netcdf4 >=1.0
