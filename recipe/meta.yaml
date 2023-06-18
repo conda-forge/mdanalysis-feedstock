@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: true  # [python_impl == 'pypy']
   skip: true  # [py>311]
   skip: true  # [py<39]
@@ -44,7 +44,7 @@ requirements:
     - networkx >=2.0
     - griddataformats >=0.4.0
     - joblib >=0.12
-    - gsd >=1.9.3
+    - gsd >=1.9.3,<3.0.0
     - mmtf-python >=1.0.0
     - scikit-learn
     - tidynamics >=1.0.0
