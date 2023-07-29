@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   skip: true  # [python_impl == 'pypy']
   skip: true  # [py>311]
   skip: true  # [py<39]
@@ -62,6 +62,13 @@ test:
     - MDAnalysis.analysis
     - MDAnalysis.lib.c_distances_openmp
     - MDAnalysis.lib.c_distances
+  requires:
+    - pip
+    - pytest
+    - pytest-xdist
+    - mdanalysistests
+  commands:
+    - pytest -v -n auto --pyargs MDAnalysisTests
 
 about:
   home: https://www.mdanalysis.org
