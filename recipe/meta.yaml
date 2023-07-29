@@ -68,6 +68,7 @@ test:
     - pytest-xdist
     - mdanalysistests
   commands:
+    - $CXX --version
     - pytest -v -n auto --pyargs MDAnalysisTests
 
 about:
