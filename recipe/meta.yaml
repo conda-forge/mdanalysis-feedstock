@@ -16,7 +16,9 @@ build:
   skip: true  # [python_impl == 'pypy']
   skip: true  # [py>311]
   skip: true  # [py<39]
-  script: {{ compiler('cxx') }} --version && {{ PYTHON }} -m pip install . --no-deps -vv
+  script:
+    - ${CXX} --version
+    - {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
