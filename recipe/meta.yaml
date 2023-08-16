@@ -62,6 +62,8 @@ test:
     - MDAnalysis.analysis
     - MDAnalysis.lib.c_distances_openmp
     - MDAnalysis.lib.c_distances
+  requires:
+    - numpy ==1.22.3
 
 about:
   home: https://www.mdanalysis.org
