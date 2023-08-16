@@ -29,7 +29,7 @@ requirements:
   host:
     - python
     - pip
-    - numpy {{ numpy }}
+    - numpy 1.25
     - cython
     - packaging
 
