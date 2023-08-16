@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/mdanalysis-feed
 
 Home: https://www.mdanalysis.org
 
-Package license: GPL-2.0-or-later
+Package license: GPL-3.0-or-later
 
 Summary: A Python package for the handling and analysis of molecular simulations data.
 
