@@ -36,7 +36,7 @@ requirements:
   run:
     - python
     - scipy >=1.5.0
-    - {{ pin_compatible('numpy', lower_bound='1.22.3') }}
+    - numpy >=1.22.3,<2.0.a0  # [py>3.8]
     - matplotlib-base >=1.5.1
     - seaborn
     - netcdf4 >=1.0
@@ -62,8 +62,6 @@ test:
     - MDAnalysis.analysis
     - MDAnalysis.lib.c_distances_openmp
     - MDAnalysis.lib.c_distances
-  requires:
-    - numpy ==1.22.3
 
 about:
   home: https://www.mdanalysis.org
