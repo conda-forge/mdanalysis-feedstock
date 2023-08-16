@@ -9,6 +9,6 @@ python_impl:
   - cpython
   - cpython
 numpy:
-  - 1.25.*
-  - 1.25.*
-  - 1.25.*
+  - 1.25
+  - 1.25
+  - 1.25
