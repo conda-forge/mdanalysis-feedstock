@@ -55,6 +55,7 @@ requirements:
     - h5py >=2.10.0
     - pytng >=0.2.3    # [not ppc64le]
     - pyedr >=0.7.1
+    - mda-xdrlib
 
 test:
   imports:
