@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 2
   skip: true  # [python_impl == 'pypy']
   skip: true  # [py>312]
   skip: true  # [py<39]
@@ -25,6 +25,7 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - python
@@ -36,7 +37,6 @@ requirements:
   run:
     - python
     - scipy >=1.5.0
-    - {{ pin_compatible('numpy', lower_bound='1.22.3') }}
     - matplotlib-base >=1.5.1
     - seaborn    # [not ppc64le]
     - netcdf4 >=1.0
