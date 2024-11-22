@@ -40,7 +40,7 @@ requirements:
     - matplotlib-base >=1.5.1
     - seaborn    # [not ppc64le]
     - netcdf4 >=1.0
-    - biopython >=1.80
+    - biopython >=1.80  # [not py>312]
     - networkx >=2.0
     - griddataformats >=0.4.0
     - joblib >=0.12
@@ -58,7 +58,7 @@ requirements:
     - mda-xdrlib
     - waterdynamics
     - pathsimanalysis
-    - mdahole2
+    - mdahole2-base
 
 test:
   imports:
