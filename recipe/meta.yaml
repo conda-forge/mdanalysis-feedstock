@@ -1,6 +1,6 @@
 {% set name = "MDAnalysis" %}
-{% set version = "2.7.0" %}
-{% set sha256 = "572e82945e5d058e3749ec5f18e6b3831ef7f2119cb54672567ae9a977201e93" %}
+{% set version = "2.8.0" %}
+{% set sha256 = "0cf8efda7cb4a1cc33a92d2cd0d69a3d9b33c06c603df3c386caf6edccf46099" %}
 
 package:
   name: {{ name|lower }}
@@ -8,11 +8,11 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.lower() }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: true  # [python_impl == 'pypy']
   skip: true  # [py>312]
   skip: true  # [py<39]
@@ -25,6 +25,7 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - python
