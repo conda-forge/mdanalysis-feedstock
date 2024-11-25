@@ -15,6 +15,7 @@ build:
   skip: true  # [python_impl == 'pypy']
   skip: true  # [py>313]
   skip: true  # [py<310]
+  skip: true  # [win]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
