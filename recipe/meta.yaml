@@ -1,21 +1,20 @@
 {% set name = "MDAnalysis" %}
-{% set version = "2.7.0" %}
-{% set sha256 = "572e82945e5d058e3749ec5f18e6b3831ef7f2119cb54672567ae9a977201e93" %}
+{% set version = "2.8.0" %}
+{% set sha256 = "0cf8efda7cb4a1cc33a92d2cd0d69a3d9b33c06c603df3c386caf6edccf46099" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/m/mdanalysis/mdanalysis-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: true  # [python_impl == 'pypy']
-  skip: true  # [py>312]
-  skip: true  # [py<39]
+  skip: true  # [py>313]
+  skip: true  # [py<310]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -25,6 +24,7 @@ requirements:
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - python
@@ -32,15 +32,15 @@ requirements:
     - numpy {{ numpy }}
     - cython
     - packaging
-
+    - setuptools
   run:
     - python
     - scipy >=1.5.0
-    - {{ pin_compatible('numpy', lower_bound='1.22.3') }}
+    - numpy >=1.23.2
     - matplotlib-base >=1.5.1
     - seaborn    # [not ppc64le]
     - netcdf4 >=1.0
-    - biopython >=1.80
+    - biopython >=1.80  # [not py>312]
     - networkx >=2.0
     - griddataformats >=0.4.0
     - joblib >=0.12
@@ -56,6 +56,9 @@ requirements:
     - pytng >=0.2.3    # [not ppc64le]
     - pyedr >=0.7.1
     - mda-xdrlib
+    - waterdynamics >=1.2.0
+    - pathsimanalysis >=1.2.0
+    - mdahole2-base >=0.5.0
 
 test:
   imports:
@@ -66,8 +69,8 @@ test:
 
 about:
   home: https://www.mdanalysis.org
-  license: GPL-3.0-or-later
-  license_family: GPL
+  license: LGPL-3.0-or-later
+  license_family: LGPL
   license_file: LICENSE
   summary: A Python package for the handling and analysis of molecular simulations data.
   description: |
