@@ -291,6 +291,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@hmacdope](https://github.com/hmacdope/)
 * [@ialibay](https://github.com/ialibay/)
 * [@kain88-de](https://github.com/kain88-de/)
 * [@orbeckst](https://github.com/orbeckst/)

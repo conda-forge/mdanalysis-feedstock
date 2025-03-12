@@ -1,6 +1,6 @@
 {% set name = "MDAnalysis" %}
-{% set version = "2.8.0" %}
-{% set sha256 = "0cf8efda7cb4a1cc33a92d2cd0d69a3d9b33c06c603df3c386caf6edccf46099" %}
+{% set version = "2.9.0" %}
+{% set sha256 = "fe7a4ac33e7a5c1001d954667d7e630aeb26cab6f8917fdbac6ffad903999497" %}
 
 package:
   name: {{ name|lower }}
@@ -50,15 +50,12 @@ requirements:
     - tidynamics >=1.0.0
     - tqdm >=4.43.0
     - threadpoolctl
-    - fasteners
+    - filelock
     - packaging
     - h5py >=2.10.0
     - pytng >=0.2.3    # [not ppc64le]
     - pyedr >=0.7.1
     - mda-xdrlib
-    - waterdynamics >=1.2.0
-    - pathsimanalysis >=1.2.0
-    - mdahole2-base >=0.5.0
 
 test:
   imports:
