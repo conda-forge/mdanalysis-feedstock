@@ -50,7 +50,7 @@ requirements:
     - tidynamics >=1.0.0
     - tqdm >=4.43.0
     - threadpoolctl
-    - fasteners
+    - filelock
     - packaging
     - h5py >=2.10.0
     - pytng >=0.2.3    # [not ppc64le]
