@@ -1,6 +1,6 @@
 {% set name = "MDAnalysis" %}
-{% set version = "2.9.0" %}
-{% set sha256 = "fe7a4ac33e7a5c1001d954667d7e630aeb26cab6f8917fdbac6ffad903999497" %}
+{% set version = "2.10.0" %}
+{% set sha256 = "5cef1f1eba4b25cbf9dd4045f08eeab293bb9577b970aa96132f14491312d877" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: true  # [python_impl == 'pypy']
   skip: true  # [py>313]
   skip: true  # [py<310]
