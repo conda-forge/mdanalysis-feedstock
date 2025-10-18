@@ -14,7 +14,7 @@ build:
   number: 0
   skip: true  # [python_impl == 'pypy']
   skip: true  # [py>313]
-  skip: true  # [py<310]
+  skip: true  # [py<311]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -36,7 +36,7 @@ requirements:
   run:
     - python
     - scipy >=1.5.0
-    - numpy >=1.23.2
+    - numpy >=1.26.0
     - matplotlib-base >=1.5.1
     - seaborn    # [not ppc64le]
     - netcdf4 >=1.0
