@@ -16,8 +16,7 @@ source:
 build:
   number: 0
   skip: match(python, "<3.11")
-  skip: true  # [py>314]
-  skip: true  # [py<311]
+  skip: match(python, ">3.14")
   script: ${{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -97,4 +96,3 @@ extra:
     - orbeckst
     - richardjgowers
     - ialibay
-
