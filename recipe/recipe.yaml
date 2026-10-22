@@ -1,0 +1,100 @@
+schema_version: 1
+
+context:
+  name: MDAnalysis
+  version: "2.11.0"
+  sha256: aee95dc08d55169c58adbeb2980ff4a39b153bf85f55f291c6c0f7b8226223b0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/m/mdanalysis/mdanalysis-{{ version }}.tar.gz
+  sha256: ${{ sha256 }}
+
+build:
+  number: 0
+  skip: match(python, "<3.11")
+  skip: true  # [py>314]
+  skip: true  # [py<311]
+  script: ${{ PYTHON }} -m pip install . --no-deps -vv
+
+requirements:
+  build:
+    - if: build_platform != target_platform
+      then: python
+    - if: build_platform != target_platform
+      then: cross-python_${{ target_platform }}
+    - if: build_platform != target_platform
+      then: cython
+    - if: build_platform != target_platform
+      then: numpy
+    - ${{ compiler('c') }}
+    - ${{ stdlib("c") }}
+    - ${{ compiler('cxx') }}
+  host:
+    - python
+    - pip
+    - numpy ${{ numpy }}
+    - cython
+    - packaging
+    - setuptools
+  run:
+    - python
+    - scipy >=1.5.0
+    - numpy >=1.26.0
+    - matplotlib-base >=1.5.1
+    - if: not ppc64le
+      then: seaborn
+    - netcdf4 >=1.0
+    - if: not match(python, ">3.12")
+      then: biopython >=1.80
+    - networkx >=2.0
+    - griddataformats >=0.4.0
+    - joblib >=0.12
+    - gsd >3.0.0
+    - mmtf-python >=1.0.0
+    - scikit-learn
+    - tidynamics >=1.0.0
+    - tqdm >=4.43.0
+    - threadpoolctl
+    - filelock
+    - packaging
+    - h5py >=2.10.0
+    - if: not ppc64le
+      then: pytng >=0.2.3
+    - pyedr >=0.7.1
+    - mda-xdrlib
+    - gemmi >=0.7.5
+
+tests:
+  - python:
+      imports:
+        - MDAnalysis
+        - MDAnalysis.analysis
+        - MDAnalysis.lib.c_distances_openmp
+        - MDAnalysis.lib.c_distances
+      pip_check: false
+
+about:
+  license: LGPL-3.0-or-later
+  license_file: LICENSE
+  summary: A Python package for the handling and analysis of molecular simulations data.
+  description: |
+    MDAnalysis is a Python library to analyze trajectories from molecular
+    dynamics (MD) simulations. It can read and write most popular formats, and
+    provides a flexible and fast framework for writing custom analysis through
+    making the underlying data easily available as NumPy arrays.
+  homepage: https://www.mdanalysis.org
+  repository: https://github.com/MDAnalysis/mdanalysis
+  documentation: https://docs.mdanalysis.org/
+
+extra:
+  recipe-maintainers:
+    - hmacdope
+    - kain88-de
+    - orbeckst
+    - richardjgowers
+    - ialibay
+
