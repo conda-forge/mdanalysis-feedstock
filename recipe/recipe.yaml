@@ -34,7 +34,7 @@ requirements:
   host:
     - python
     - pip
-    - numpy ${{ numpy }}
+    - numpy ${{ numpy }}.*
     - cython
     - packaging
     - setuptools
