@@ -47,7 +47,7 @@ chmod +x "${MICROMAMBA_EXE}"
 echo Creating environment
 "${MICROMAMBA_EXE}" create --yes --root-prefix "${MAMBA_ROOT_PREFIX}" --prefix "${MINIFORGE_HOME}" \
     --override-channels --channel conda-forge --strict-channel-priority \
-    pip python=3.14 conda-build conda-forge-ci-setup=4 "conda-build <24.11"
+    pip python=3.14 conda-build conda-forge-ci-setup=4 "conda-build>=26.3"
 echo "Moving pkgs cache from ${MAMBA_ROOT_PREFIX} to ${MINIFORGE_HOME}"
 mv "${MAMBA_ROOT_PREFIX}/pkgs" "${MINIFORGE_HOME}"
 
