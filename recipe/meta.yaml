@@ -56,6 +56,7 @@ requirements:
     - pytng >=0.2.3    # [not ppc64le]
     - pyedr >=0.7.1
     - mda-xdrlib
+    - gemmi >=0.7.5
 
 test:
   imports:
