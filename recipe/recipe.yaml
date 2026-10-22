@@ -10,7 +10,7 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/source/m/mdanalysis/mdanalysis-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/m/mdanalysis/mdanalysis-${{ version }}.tar.gz
   sha256: ${{ sha256 }}
 
 build:
