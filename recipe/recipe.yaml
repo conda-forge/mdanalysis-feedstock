@@ -14,7 +14,7 @@ source:
   sha256: ${{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: match(python, "<3.11,>3.14")
   script: ${{ PYTHON }} -m pip install . --no-deps -vv
 
@@ -65,6 +65,7 @@ requirements:
     - pyedr >=0.7.1
     - mda-xdrlib
     - gemmi >=0.7.5
+    - pooch
 
 tests:
   - python:
