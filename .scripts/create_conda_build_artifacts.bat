@@ -43,12 +43,6 @@ if not "%ARTIFACT_UNIQUE_ID%" == "%ARTIFACT_UNIQUE_ID:~0,80%" (
     set ARTIFACT_UNIQUE_ID=%CI_RUN_ID%_%CONFIG_SHORT%
 )
 
-rem TODO: hotfix, ARCHIVE_UNIQUE_ID is used below but never set by the conda-smithy
-rem template (see conda-forge/conda-smithy#2346, #2720). Will be overwritten on rerender;
-rem remove once fixed upstream.
-rem Set a descriptive ID for the archive(s), specialized for this particular job run
-set ARCHIVE_UNIQUE_ID=%CI_RUN_ID%_%CONFIG%
-
 rem --use-compress-prog hangs on Azure, but we can use bsdtar unconditionally.
 set "ZSTD=--zstd --options=zstd:compression-level=12,zstd:threads=0"
 
@@ -107,7 +101,7 @@ if defined BLD_ARTIFACT_PREFIX (
         echo Creating build artifact archive ...
         rem Note: because of https://github.com/actions/upload-artifact/issues/785,
         rem *_ARTIFACT_NAME should be the filename of *_ARTIFACT_PATH
-        set "BLD_ARTIFACT_NAME=%FEEDSTOCK_NAME%_%BLD_ARTIFACT_PREFIX%_%ARCHIVE_UNIQUE_ID%.tar.zst"
+        set "BLD_ARTIFACT_NAME=%FEEDSTOCK_NAME%_%BLD_ARTIFACT_PREFIX%_%ARTIFACT_UNIQUE_ID%.tar.zst"
         set "BLD_ARTIFACT_PATH=%ARTIFACT_STAGING_DIR%\!BLD_ARTIFACT_NAME!"
         bsdtar -c -f "!BLD_ARTIFACT_PATH!" %ZSTD% %ARTIFACT_PATHS%
         if errorlevel 1 (
@@ -144,7 +138,7 @@ echo.
 rem Make the work directory artifact archive
 if defined WRK_ARTIFACT_PREFIX (
     echo Creating work directory archive ...
-    set "WRK_ARTIFACT_NAME=%FEEDSTOCK_NAME%_%WRK_ARTIFACT_PREFIX%_%ARCHIVE_UNIQUE_ID%.tar.zst"
+    set "WRK_ARTIFACT_NAME=%FEEDSTOCK_NAME%_%WRK_ARTIFACT_PREFIX%_%ARTIFACT_UNIQUE_ID%.tar.zst"
     set "WRK_ARTIFACT_PATH=%ARTIFACT_STAGING_DIR%\!WRK_ARTIFACT_NAME!"
     bsdtar -c -f "!WRK_ARTIFACT_PATH!" %ZSTD% %EXCLUDE_FROM_WORK% .
     if errorlevel 1 (
@@ -179,7 +173,7 @@ rem Make the environment artifact archive
 if defined ENV_ARTIFACT_PREFIX (
     if not "%ENVIRONMENT_PATHS%" == "" (
         echo Creating build environment artifact archive ...
-        set "ENV_ARTIFACT_NAME=%FEEDSTOCK_NAME%_%ENV_ARTIFACT_PREFIX%_%ARCHIVE_UNIQUE_ID%.tar.zst"
+        set "ENV_ARTIFACT_NAME=%FEEDSTOCK_NAME%_%ENV_ARTIFACT_PREFIX%_%ARTIFACT_UNIQUE_ID%.tar.zst"
         set "ENV_ARTIFACT_PATH=%ARTIFACT_STAGING_DIR%\!ENV_ARTIFACT_NAME!"
         bsdtar -c -f "!ENV_ARTIFACT_PATH!" %ZSTD% %ENVIRONMENT_PATHS%
         if errorlevel 1 (
